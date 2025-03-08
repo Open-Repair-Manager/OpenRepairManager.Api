@@ -4,14 +4,14 @@
     "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/OpenRepairManager.Api.csproj": {}
   },
   "projects": {
-    "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/OpenRepairManager.Api.csproj": {
+    "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/OpenRepairManager.Api.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/OpenRepairManager.Api.csproj",
-        "projectName": "OpenRepairManager.Api",
-        "projectPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/OpenRepairManager.Api.csproj",
+        "projectUniqueName": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/OpenRepairManager.Api.Data.csproj",
+        "projectName": "OpenRepairManager.Api.Data",
+        "projectPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/OpenRepairManager.Api.Data.csproj",
         "packagesPath": "/Users/mitchellhawks/.nuget/packages/",
-        "outputPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/obj/",
+        "outputPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mitchellhawks/.nuget/NuGet/NuGet.Config"
@@ -45,25 +45,115 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/OpenRepairManager.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/OpenRepairManager.Api.csproj",
+        "projectName": "OpenRepairManager.Api",
+        "projectPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/OpenRepairManager.Api.csproj",
+        "packagesPath": "/Users/mitchellhawks/.nuget/packages/",
+        "outputPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mitchellhawks/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/OpenRepairManager.Api.Data.csproj": {
+                "projectPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/OpenRepairManager.Api.Data.csproj"
+              },
+              "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/OpenRepairManager.MySQLMigrations.csproj": {
+                "projectPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/OpenRepairManager.MySQLMigrations.csproj"
+              },
+              "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/OpenRepairManager.SQLiteMigrations.csproj": {
+                "projectPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/OpenRepairManager.SQLiteMigrations.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.2, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.2, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[9.0.0-preview.3.efcore.9.0.0, )"
             }
           },
           "imports": [
@@ -81,6 +171,178 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/OpenRepairManager.MySQLMigrations.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/OpenRepairManager.MySQLMigrations.csproj",
+        "projectName": "OpenRepairManager.MySQLMigrations",
+        "projectPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/OpenRepairManager.MySQLMigrations.csproj",
+        "packagesPath": "/Users/mitchellhawks/.nuget/packages/",
+        "outputPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mitchellhawks/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/OpenRepairManager.Api.Data.csproj": {
+                "projectPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/OpenRepairManager.Api.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[9.0.0-preview.3.efcore.9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/OpenRepairManager.SQLiteMigrations.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/OpenRepairManager.SQLiteMigrations.csproj",
+        "projectName": "OpenRepairManager.SQLiteMigrations",
+        "projectPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/OpenRepairManager.SQLiteMigrations.csproj",
+        "packagesPath": "/Users/mitchellhawks/.nuget/packages/",
+        "outputPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mitchellhawks/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/OpenRepairManager.Api.Data.csproj": {
+                "projectPath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/OpenRepairManager.Api.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

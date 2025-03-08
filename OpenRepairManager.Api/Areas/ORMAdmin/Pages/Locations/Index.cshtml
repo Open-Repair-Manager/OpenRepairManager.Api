@@ -1,0 +1,75 @@
+﻿@page
+@model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Locations.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "View Locations";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Location</h4>
+                <p class="category"><a asp-area="ORMAdmin" asp-page="/Locations/Create">New Location</a> </p>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Location[0].LocationName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Location[0].LocationStreetNo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Location[0].LocationStreetName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Location[0].LocationSuburb)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Location[0].LocationPostCode)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Location)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LocationName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LocationStreetNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LocationStreetName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LocationSuburb)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LocationPostCode)
+                                </td>
+                                <td>
+                                    <a asp-page="./Edit" asp-route-id="@item.LocationID">Edit</a> |
+                                    <a asp-page="./Details" asp-route-id="@item.LocationID">Details</a> |
+                                    <a asp-page="./Delete" asp-route-id="@item.LocationID">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#locMan').addClass('active');
+        });
+    </script>
+}

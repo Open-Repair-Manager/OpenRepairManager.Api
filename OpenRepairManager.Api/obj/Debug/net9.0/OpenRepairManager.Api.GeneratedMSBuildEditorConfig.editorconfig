@@ -32,6 +32,30 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Areas/ORMAdmin/Pages/Locations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvTG9jYXRpb25zL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Areas/ORMAdmin/Pages/Locations/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvTG9jYXRpb25zL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Areas/ORMAdmin/Pages/Locations/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvTG9jYXRpb25zL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Areas/ORMAdmin/Pages/Locations/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvTG9jYXRpb25zL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Areas/ORMAdmin/Pages/Locations/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvTG9jYXRpb25zL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Areas/ORMAdmin/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

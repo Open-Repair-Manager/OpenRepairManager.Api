@@ -1,0 +1,127 @@
+﻿@page
+@model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Locations.CreateModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "New Location";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Add Location</h4>
+            </div>
+            <div class="content">
+                <form method="post">
+                    <div class="form-group">
+                        <label class="control-label">Find Address</label>
+                        <input class="form-control" id="Gmaps" type="text" placeholder="Search for locations..." />
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Location.LocationName" class="control-label"></label>
+                        <input asp-for="Location.LocationName" class="form-control" />
+                        <span asp-validation-for="Location.LocationName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Location.LocationStreetNo" class="control-label"></label>
+                        <input asp-for="Location.LocationStreetNo" class="form-control street_number" />
+                        <span asp-validation-for="Location.LocationStreetNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Location.LocationStreetName" class="control-label"></label>
+                        <input asp-for="Location.LocationStreetName" class="form-control route" />
+                        <span asp-validation-for="Location.LocationStreetName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Location.LocationSuburb" class="control-label"></label>
+                        <input asp-for="Location.LocationSuburb" class="form-control locality" />
+                        <span asp-validation-for="Location.LocationSuburb" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Location.LocationPostCode" class="control-label"></label>
+                        <input asp-for="Location.LocationPostCode" class="form-control postal_code" />
+                        <span asp-validation-for="Location.LocationPostCode" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Location.GMapsPlaceId" class="control-label"></label>
+                        <input asp-for="Location.GMapsPlaceId" class="form-control" />
+                        <span asp-validation-for="Location.GMapsPlaceId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                <a asp-area="ORMAdmin" asp-page="/Locations/Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script defer
+            src="https://maps.googleapis.com/maps/api/js?key=key&libraries=places&callback=initAutocomplete">
+    </script>
+    <script>
+        let placeSearch;
+        let autocomplete;
+        const componentForm = {
+            street_number: "short_name",
+            route: "long_name",
+            locality: "long_name",
+            postal_code: "short_name",
+        };
+
+        function initAutocomplete() {
+            // Create the autocomplete object, restricting the search predictions to
+            // geographical location types.
+
+            var options = {
+                componentRestrictions: { country: 'au' },
+                strictBounds: true
+            };
+            autocomplete = new google.maps.places.Autocomplete(
+                document.getElementById("Gmaps"), options
+            );
+            // Avoid paying for data that you don't need by restricting the set of
+            // place fields that are returned to just the address components.
+            autocomplete.setFields(["address_component", "name", "place_id"]);
+            // When the user selects an address from the drop-down, populate the
+            // address fields in the form.
+            autocomplete.addListener("place_changed", fillInAddress);
+        }
+
+        function fillInAddress() {
+            // Get the place details from the autocomplete object.
+            const place = autocomplete.getPlace();
+
+            for (const component in componentForm) {
+                document.getElementsByClassName(component)[0].value = "";
+                document.getElementsByClassName(component)[0].disabled = false;
+            }
+
+            // Get each component of the address from the place details,
+            // and then fill-in the corresponding field on the form.
+            for (const component of place.address_components) {
+                const addressType = component.types[0];
+
+                if (componentForm[addressType]) {
+                    const val = component[componentForm[addressType]];
+                    document.getElementsByClassName(addressType)[0].value = val;
+                }
+            }
+            document.getElementById("Location_LocationName").value = place.name;
+            document.getElementById("Location_GMapsPlaceId").value = place.place_id;
+        }
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#locMan').addClass('active');
+        });
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

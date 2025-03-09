@@ -1,0 +1,86 @@
+﻿@page
+@model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Sessions.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "View Sessions";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Sessions</h4>
+                <p class="category"><a asp-area="ORMAdmin" asp-page="/Sessions/Create">New Session</a> </p>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Session[0].SessionName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Session[0].SessionInfo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Session[0].SessionSlug)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Session[0].SessionDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Session[0].StartTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Session[0].EndTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Session[0].Location)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Session)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SessionName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SessionInfo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SessionSlug)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SessionDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StartTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EndTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Location.LocationName)
+                                </td>
+                                <td>
+                                    <a asp-page="./Edit" asp-route-id="@item.SessionID">Edit</a> |
+                                    <a asp-page="./Delete" asp-route-id="@item.SessionID">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#sessionMan').addClass('active');
+        });
+    </script>
+}

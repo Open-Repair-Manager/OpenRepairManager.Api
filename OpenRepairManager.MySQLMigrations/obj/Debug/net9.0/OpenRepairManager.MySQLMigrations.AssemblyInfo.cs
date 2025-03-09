@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OpenRepairManager.MySQLMigrations")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6aa7f3f3a1f7a861df7d6e771f37d15204e00e4b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58c8ab53d999ef8814d47b294945184ac5cd2966")]
 [assembly: System.Reflection.AssemblyProductAttribute("OpenRepairManager.MySQLMigrations")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OpenRepairManager.MySQLMigrations")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

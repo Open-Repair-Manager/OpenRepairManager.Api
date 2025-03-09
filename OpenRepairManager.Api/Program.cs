@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using OpenRepairManager.Api.Api.Service;
 using OpenRepairManager.Api.Data;
 using OpenRepairManager.Api.Services;
 using OpenRepairManager.Common.Models;
@@ -39,6 +40,7 @@ if (firstrun)
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlite(connectionStringSetting.Value,
             x => x.MigrationsAssembly("OpenRepairManager.SQLiteMigrations")));
+    
 }
 else
 {
@@ -70,7 +72,7 @@ else
     }
 }
 
-
+builder.Services.AddScoped<CheckKeyService>();
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -119,6 +121,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapControllers();
 app.MapStaticAssets();
 app.MapRazorPages()
     .WithStaticAssets();

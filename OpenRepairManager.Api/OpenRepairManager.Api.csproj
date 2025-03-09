@@ -18,6 +18,7 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0-preview.3.efcore.9.0.0" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.6.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -27,19 +28,15 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Data\Migrations\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\OpenRepairManager.Api.Data\OpenRepairManager.Api.Data.csproj" />
       <ProjectReference Include="..\OpenRepairManager.MySQLMigrations\OpenRepairManager.MySQLMigrations.csproj" />
       <ProjectReference Include="..\OpenRepairManager.SQLiteMigrations\OpenRepairManager.SQLiteMigrations.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Content Update="appsettingsecrets.json">
-        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      </Content>
+      <_ContentIncludedByDefault Remove="Areas\ORMAdmin\Pages\Setup\ApiKey\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\ORMAdmin\Pages\Setup\ApiKey\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\ORMAdmin\Pages\Setup\ApiKey\Revoke.cshtml" />
     </ItemGroup>
 
 </Project>

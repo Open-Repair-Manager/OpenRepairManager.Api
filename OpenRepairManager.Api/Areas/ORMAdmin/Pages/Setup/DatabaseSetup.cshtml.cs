@@ -139,64 +139,6 @@ namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup
             return Page();
         }
         
-        /*
-        public async Task<IActionResult> OnPostTestDbAsync()
-        {
-            if(useExistingDB)
-            {
-                bool isValid = await _context.Database.CanConnectAsync();
-                if (isValid)
-                {
-                    await _context.Database.MigrateAsync();
-                    return RedirectToPage("SetupComplete");
-                }
-                else
-                {
-                    ViewData["Error"] = "The Database could not be connected. Please check settings and try again.";
-                }
-            }
-            else
-            {
-                var connectionstring = new MySqlConnectionStringBuilder()
-                {
-                    Server = serverName,
-                    Port = serverPort,
-                    Database = databaseName,
-                    UserID = userName,
-                    Password = userPassword
-                }.ToString();
-                _context.Database.SetConnectionString(connectionstring);
-                if (await _context.Database.CanConnectAsync())
-                {
-                    SettingsService.AddOrUpdate(new()
-                    {
-                        Name = "connectionstring",
-                        Value = connectionstring
-                    });
-                    SettingsService.AddOrUpdate(new()
-                    {
-                        Name = "dbchanged",
-                        Value = "yes"
-                    });
-                    await _context.Database.MigrateAsync();
-                    _applicationLifetime.StopApplication();
-                    return new ContentResult()
-                    {
-                        Content = "<head><meta http-equiv=\"refresh\" content=\"5\"></head><p>Database Created! Please <a href=\"/ORMAdmin/Setup/DatabaseSetup\">Clich Here</a> to continue</p>",
-                        ContentType = "text/html",
-                        StatusCode = 200
-                    };
-                    
-                }
-                else
-                {
-                    ViewData["Error"] = "The Database could not be connected. Please check settings and try again.";
-                }
-
-            }
-            
-            return Page();
-        }
-        */
+        
     }
 }

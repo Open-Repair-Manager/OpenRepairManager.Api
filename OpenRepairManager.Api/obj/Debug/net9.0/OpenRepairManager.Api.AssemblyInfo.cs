@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OpenRepairManager.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9292395621b9f22925de7ae189878862d1c51c0a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6aa7f3f3a1f7a861df7d6e771f37d15204e00e4b")]
 [assembly: System.Reflection.AssemblyProductAttribute("OpenRepairManager.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OpenRepairManager.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

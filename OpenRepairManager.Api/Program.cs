@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OpenRepairManager.Api.Data;
 using OpenRepairManager.Api.Services;
+using OpenRepairManager.Common.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-var serverVersion = new MariaDbServerVersion(new Version(11, 7, 2));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -25,51 +25,74 @@ if (firstrun)
         Name = "firstrun",
         Value = "yes"
     });
-}
-var firstRunSetting = SettingsService.GetSetting("firstrun");
-if (firstRunSetting != null)
-{
-    builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite("DataSource=orm.db;Cache=shared",
-        x => x.MigrationsAssembly("OpenRepairManager.SQLiteMigrations")));
-    /*var connectionStringSettingtest = SettingsService.GetSetting("connectionstring");
-    if (firstRunSetting.Value != "yes")
+    SettingsService.AddOrUpdate(new()
     {
-        var connectionStringSetting = SettingsService.GetSetting("connectionstring");
-
-        services.AddDbContext<ORMDbContext>(options =>
+        Name="dbtype",
+        Value = "sqlite"
+    });
+    SettingsService.AddOrUpdate(new()
+    {
+        Name = "connectionString",
+        Value = "DataSource=orm.db;Cache=shared"
+    });
+    var connectionStringSetting = SettingsService.GetSetting("connectionString");
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlite(connectionStringSetting.Value,
+            x => x.MigrationsAssembly("OpenRepairManager.SQLiteMigrations")));
+}
+else
+{
+    var dboption = SettingsService.GetSetting("dbtype");
+    if (dboption.Value == "mysql")
+    {
+        try
         {
-            options.UseMySql(connectionStringSetting.Value, new MariaDbServerVersion(new Version(10, 4)),
-                assembly => assembly.MigrationsAssembly(typeof(ORMDbContext).Assembly.FullName));
-        });
-        services.AddScoped<CheckKeyService>();*/
-					
+            var connectionStringSetting = SettingsService.GetSetting("connectionString");
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseMySql(connectionStringSetting.Value, new MariaDbServerVersion(new Version(11,3,0)),
+                    x => x.MigrationsAssembly("OpenRepairManager.MySQLMigrations")));
+        }
+        catch (Exception Ex)
+        {
+            SettingsService.AddOrUpdate(new Setting()
+            {
+                Name = "dberror",
+                Value = "true"
+            });
+        }
     }
     else
     {
+        var connectionStringSetting = SettingsService.GetSetting("connectionString");
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseMySql(connectionString, serverVersion,
-                x => x.MigrationsAssembly("OpenRepairManager.MySQLMigrations")));
-        
-        /*SettingsService.AddOrUpdate(new()
-        {
-            Name = "connectionstring",
-            Value = connectionString
-        });
-        services.AddDbContext<ORMDbContext>(options =>
-        {
-            options.UseMySql(connectionString, new MariaDbServerVersion(new Version(10, 4)),
-                assembly => assembly.MigrationsAssembly(typeof(ORMDbContext).Assembly.FullName));
-        });
-        services.AddScoped<CheckKeyService>();*/
+            options.UseSqlite(connectionStringSetting.Value,
+                x => x.MigrationsAssembly("OpenRepairManager.SQLiteMigrations")));
     }
+}
+
 
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    db.Database.Migrate();
+    try
+    {
+        db.Database.Migrate();
+        SettingsService.AddOrUpdate(new Setting()
+        {
+            Name = "dberror",
+            Value = "false"
+        });
+    }
+    catch (Exception Ex)
+    {
+        SettingsService.AddOrUpdate(new Setting()
+        {
+            Name = "dberror",
+            Value = "true"
+        });
+    }
 }
 
 app.UseForwardedHeaders(new ForwardedHeadersOptions

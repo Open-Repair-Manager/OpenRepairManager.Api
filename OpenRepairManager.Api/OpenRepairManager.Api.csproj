@@ -36,4 +36,10 @@
       <ProjectReference Include="..\OpenRepairManager.SQLiteMigrations\OpenRepairManager.SQLiteMigrations.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Update="appsettingsecrets.json">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

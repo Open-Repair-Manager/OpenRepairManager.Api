@@ -12,8 +12,8 @@ public static class DataProtectionService
         var serviceCollection = new ServiceCollection();
 
         serviceCollection.AddDataProtection()
-            .SetApplicationName(APP_NAME);
-        //.PersistKeysToFileSystem(new DirectoryInfo($"{CurrentDirectory}/secrets"));
+            .SetApplicationName(APP_NAME)
+            .PersistKeysToFileSystem(new DirectoryInfo($"{CurrentDirectory}/secrets"));
         var services = serviceCollection.BuildServiceProvider();
         var dataProtectionProvider = services.GetService<IDataProtectionProvider>();
         return dataProtectionProvider.CreateProtector(APP_NAME);

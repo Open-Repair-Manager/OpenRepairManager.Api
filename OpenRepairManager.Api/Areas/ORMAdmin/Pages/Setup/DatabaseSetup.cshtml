@@ -1,0 +1,64 @@
+﻿@page
+@model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup.DatabaseSetupModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Database";
+    if (Model.DBError)
+    {
+        ViewData["Error"] = "The Database could not be created. Please check settings and try again.";
+    }
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h1 class="title">Open Repair Manager</h1>
+                <h2>Inital Setup</h2>
+
+            </div>
+            <div class="content">
+                <div class="alert-danger">
+                    <p>@ViewData["Error"]</p>
+                </div>
+                <p>Next up, We will setup the database. If you have an existing MySQL/MariaDB Database, you can configure it here. If you're not sure, select SQLite, and we'll generate a new database file for you.</p>
+                
+                <form method="post" id="mysqlForm">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    
+                    <label>Use MySQL?</label>
+                    <input onchange="changeDb()" asp-for="useMySQL"/>
+                    <div id="dbSettings" style="display: none" >
+                        <label>Server:</label>
+                        <input asp-for="serverName" />
+                        <label>Port:</label>
+                        <input asp-for="serverPort" />
+                        <label>Database:</label>
+                        <input asp-for="databaseName" />
+                        <label>Username</label>
+                        <input asp-for="userName" />
+                        <label>Password</label>
+                        <input type="password" asp-for="userPassword" />
+                    </div>
+                    <button id="useMySQLsub" style="display: none" type="submit">Test Connection and Continue</button>
+                    <button id="useSQlitesub" type="submit">Create Database and Continue</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        function changeDb(){
+            if ($('#useMySQL').is(':checked')){
+                $('#dbSettings').show();
+                $('#useSQlitesub').hide();
+                $('#useMySQLsub').show();
+            }
+            else{
+                $('#dbSettings').hide();
+                $('#useSQlitesub').show();
+                $('#useMySQLsub').hide();
+            }
+        }
+    </script>
+}

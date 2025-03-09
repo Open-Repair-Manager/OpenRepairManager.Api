@@ -1,0 +1,37 @@
+﻿@page
+@model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Welcome!";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h1 class="title">Welcome to Open Repair Manager!</h1>
+                <h2>Initial Setup</h2>
+
+            </div>
+            <div class="content">
+                <p>Welcome to ORM! The following pages we will setup your server to get you up and running.</p>
+                <p>First up, what is the name of your program? (EG. Repair Cafe [City Name])</p>
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input required asp-for="Name" />
+                    <button type="submit" class="btn btn-primary" value="Next"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebar').hide();
+            $('#sidebar').addClass("collapsed");
+        });
+    </script>
+}

@@ -67,7 +67,7 @@ namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup
                     {
                         return Page();
                     }
-                    return RedirectToPage("SetupComplete");
+                    return RedirectToPage("AccountSetup");
                 }
             }
             return Page();
@@ -105,7 +105,7 @@ namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup
                 _applicationLifetime.StopApplication();
                 return new ContentResult()
                 {
-                    Content = "<head></head><p>Database Setting Saved! If you are running this app on a web server, please <a href=\"/ORMAdmin/Setup/DatabaseSetup\">Click Here</a> to continue. If you are running this from the executable directly, please restart the app before clicking the link. If the connection fails, the form will be redisplayed</p>",
+                    Content = "<head></head><p>Database Setting Saved! If you are running this app on a web server, please <a href=\"/ORMAdmin/Setup/DatabaseSetup\">Click Here</a> to continue after 30 seconds. If you are running this from the executable directly, please restart the app before clicking the link. If the connection fails, the form will be redisplayed</p>",
                     ContentType = "text/html",
                     StatusCode = 200
                 };

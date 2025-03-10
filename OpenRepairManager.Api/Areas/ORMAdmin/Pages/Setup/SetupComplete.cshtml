@@ -2,24 +2,37 @@
 @model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup.SetupCompleteModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
+    ViewData["Title"] = "Setup Complete";
 }
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="header">
-                <h1 class="title">Setup Complete!</h1>
-                <h2></h2>
-
-            </div>
-            <div class="content">
-                <p>
-                    The database has been setup successfully and is ready to go! Thanks for using Open Repair Manager!
-                </p>
-                <form method="post">
-                    <button type="submit">Continue</button>
-                </form>
-            </div>
+<section class="section">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Open Repair Manager</h4>
+        </div>
+        <div class="card-body">
+            <p>That's it! Everything has been setup and is ready to go! Thanks for using Open Repair Manager!</p>
+            <p>
+                Next Steps:
+            </p>
+            <ul>
+                <li>Create the first location for your workshops</li>
+                <li>Create your first workshop session</li>
+                <li>Generate an API key for the companion ORM app</li>
+                <li>Start using ORM at your workshops!</li>
+            </ul>
+            <form method="post">
+                <button class="btn btn-primary me-1 mb-1" type="submit">Continue</button>
+            </form>
         </div>
     </div>
-</div>
+</section>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebar-nav').hide();
+            $('#setup-nav').show();
+            $('#setupCompleteNav').addClass('active');
+        });
+    </script>
+}

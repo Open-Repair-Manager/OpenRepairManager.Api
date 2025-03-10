@@ -2,36 +2,43 @@
 @model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup.IndexModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
-    ViewData["Title"] = "Welcome!";
+    ViewData["Title"] = "Setup";
 }
 
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="header">
-                <h1 class="title">Welcome to Open Repair Manager!</h1>
-                <h2>Initial Setup</h2>
-
-            </div>
-            <div class="content">
-                <p>Welcome to ORM! The following pages we will setup your server to get you up and running.</p>
-                <p>First up, what is the name of your program? (EG. Repair Cafe [City Name])</p>
-                <form method="post">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input required asp-for="Name" />
-                    <button type="submit" class="btn btn-primary" value="Next"></button>
-                </form>
-            </div>
+<section class="section">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Welcome to Open Repair Manager!</h4>
+        </div>
+        <div class="card-body">
+            <p>Welcome to ORM! Through the following pages we will setup your server to get you up and running.</p>
+            <p>First up, what is the name of your repair program? (EG. Repair Cafe [City Name])</p>
+            <form class="form form-vertical" method="post">
+                <div class="form-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="Name">Name</label>
+                                <input class="form-control" required asp-for="Name"/>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary me-1 mb-1">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </form>
         </div>
     </div>
-</div>
+</section>
 
 @section Scripts{
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#sidebar').hide();
-            $('#sidebar').addClass("collapsed");
+            $('#sidebar-nav').hide();
+            $('#setup-nav').show();
+            $('#setupWelcomeNav').addClass('active');
         });
     </script>
 }

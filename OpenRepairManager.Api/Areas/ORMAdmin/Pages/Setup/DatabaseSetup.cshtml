@@ -2,50 +2,81 @@
 @model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup.DatabaseSetupModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
-    ViewData["Title"] = "Database";
+    ViewData["Title"] = "Database Setup";
     if (Model.DBError)
     {
         ViewData["Error"] = "The Database could not be created. Please check settings and try again.";
     }
 }
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="header">
-                <h1 class="title">Open Repair Manager</h1>
-                <h2>Inital Setup</h2>
 
+<section class="section">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Welcome to Open Repair Manager!</h4>
+        </div>
+        <div class="card-body">
+            <div class="alert-danger">
+                <p>@ViewData["Error"]</p>
             </div>
-            <div class="content">
-                <div class="alert-danger">
-                    <p>@ViewData["Error"]</p>
-                </div>
-                <p>Next up, We will setup the database. If you have an existing MySQL/MariaDB Database, you can configure it here. If you're not sure, select SQLite, and we'll generate a new database file for you.</p>
-                
-                <form method="post" id="mysqlForm">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    
-                    <label>Use MySQL?</label>
-                    <input onchange="changeDb()" asp-for="useMySQL"/>
-                    <div id="dbSettings" style="display: none" >
-                        <label>Server:</label>
-                        <input asp-for="serverName" />
-                        <label>Port:</label>
-                        <input asp-for="serverPort" />
-                        <label>Database:</label>
-                        <input asp-for="databaseName" />
-                        <label>Username</label>
-                        <input asp-for="userName" />
-                        <label>Password</label>
-                        <input type="password" asp-for="userPassword" />
+            <p>Next up, We will setup the database. If you have an existing MySQL/MariaDB Database,
+                you can configure it here. If you're not sure, leave "Use MYSQL?" unchecked,
+                and we'll generate a new database file for you.</p>
+            
+            <form class="form form-vertical" method="post">
+                <div class="col-6">
+                    <div class="form-check">
+                        <div class="checkbox">
+                            <input class="form-check-input" onchange="changeDb()" asp-for="useMySQL"/>
+                            <label>Use MySQL?</label>
+                        </div>
                     </div>
-                    <button id="useMySQLsub" style="display: none" type="submit">Test Connection and Continue</button>
-                    <button id="useSQlitesub" type="submit">Create Database and Continue</button>
-                </form>
-            </div>
+                </div>
+                <div style="display: none" id="dbSettings" class="form-body">
+                    <div class="row">
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Server</label>
+                                <input class="form-control" asp-for="serverName"/>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Port</label>
+                                <input class="form-control" asp-for="serverPort"/>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Database</label>
+                                <input class="form-control" asp-for="databaseName"/>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input class="form-control" asp-for="userName"/>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input class="form-control" type="password" asp-for="userPassword"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="btn btn-primary me-1 mb-1" id="useMySQLsub" style="display: none" type="submit">Test Connection and Continue</button>
+                    <button class="btn btn-primary me-1 mb-1" id="useSQlitesub" type="submit">Create Database and Continue</button>
+                </div>
+            </form>
         </div>
     </div>
-</div>
+</section>
+
 @section Scripts{
     <script type="text/javascript">
         function changeDb(){
@@ -60,5 +91,11 @@
                 $('#useMySQLsub').hide();
             }
         }
+
+        $(document).ready(function () {
+            $('#sidebar-nav').hide();
+            $('#setup-nav').show();
+            $('#setupDatabaseNav').addClass('active');
+        });
     </script>
 }

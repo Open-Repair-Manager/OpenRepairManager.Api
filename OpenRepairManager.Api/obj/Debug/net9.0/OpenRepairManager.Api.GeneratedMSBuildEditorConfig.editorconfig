@@ -44,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvQXBpS2V5L1Jldm9rZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Areas/ORMAdmin/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Areas/ORMAdmin/Pages/Locations/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvTG9jYXRpb25zL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -84,6 +88,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvU2Vzc2lvbnMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Areas/ORMAdmin/Pages/Setup/AccountSetup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvU2V0dXAvQWNjb3VudFNldHVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Areas/ORMAdmin/Pages/Setup/DatabaseSetup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvT1JNQWRtaW4vUGFnZXMvU2V0dXAvRGF0YWJhc2VTZXR1cC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -110,6 +118,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Pages/Shared/_AdminNavPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19BZG1pbk5hdlBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Pages/Shared/_DashLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19EYXNoTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/Pages/Shared/_LoginPartial.cshtml]

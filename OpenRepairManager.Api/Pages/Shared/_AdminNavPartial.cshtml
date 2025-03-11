@@ -40,7 +40,7 @@
         </div>
         <div id="sidebar-nav" class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-title"><strong>Menu</strong></li>
+                <li class="sidebar-title"><h5>Menu</h5></li>
 
                 <li id="dashNav" class="sidebar-item">
                     <a asp-area="ORMAdmin" asp-page="/Index" class="sidebar-link">
@@ -50,8 +50,8 @@
                 </li>
 
                 <li id="locNavBase" class="sidebar-item has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-stack"></i>
+                    <a href="#" class="sidebar-link">
+                        <i class="bi bi-map"></i>
                         <span>Locations</span>
                     </a>
 
@@ -69,7 +69,7 @@
                 
                 <li id="sesNavBase" class="sidebar-item has-sub">
                     <a href="#" class="sidebar-link">
-                        <i class="bi bi-stack"></i>
+                        <i class="bi bi-calendar-date"></i>
                         <span>Sessions</span>
                     </a>
 
@@ -83,6 +83,35 @@
                         </li>
                     </ul>
                 </li>
+                <li id="apiKeyNav" class="sidebar-item">
+                    <a asp-area="ORMAdmin" asp-page="/APIKey/Index" class="sidebar-link">
+                        <i class="bi bi-key"></i>
+                        <span>API Keys</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li class="sidebar-title"><h5>Settings</h5></li>
+
+                <li id="profileNav" class="sidebar-item">
+                    <a asp-area="ORMAdmin" asp-page="/Index" class="sidebar-link">
+                        <i class="bi bi-person"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li id="configNav" class="sidebar-item">
+                    <a asp-area="ORMAdmin" asp-page="/Settings" class="sidebar-link">
+                        <i class="bi bi-sliders"></i>
+                        <span>Configuration</span>
+                    </a>
+                </li>
+                <li id="aboutNav" class="sidebar-item">
+                    <a asp-area="ORMAdmin" asp-page="/Index" class="sidebar-link">
+                        <i class="bi bi-info-circle"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
 

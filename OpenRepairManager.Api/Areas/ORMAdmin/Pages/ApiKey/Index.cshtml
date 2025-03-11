@@ -2,25 +2,52 @@
 @model OpenRepairManager.Api.Areas.ORMAdmin.Pages.ApiKey.IndexModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
+    ViewData["Title"] = "API Keys";
+}
+<section class="section">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Your API Keys</h4>
+        </div>
+        <div class="card-body">
+            <p>You currently have <strong>@Model.apiKeys.Count</strong> API keys</p>
+            <div class="table-responsive">
+                <table class="table table-striped mb-0" id="keyTable">
+                    <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.apiKeys[0].Key)</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var key in Model.apiKeys)
+                    {
+                        <tr>
+                            <td>@key.Key</td>
+                            <td>
+                                <a class="btn btn-danger" asp-page="Revoke" asp-route-_key="@key.Key">Revoke</a>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <form method="post" asp-page="Create">
+                    <button class="btn btn-primary me-1 mb-1" type="submit">Generate New Key</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+@Html.AntiForgeryToken()
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#apiKeyNav').addClass('active');
+        });
+
+    </script>
+    
 }
 
-<h1>Your Api Keys</h1>
-<table>
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.apiKeys[0].Key)</th>
-        </tr>       
-    </thead>
-    <tbody>
-        @foreach (var key in Model.apiKeys)
-        {
-            <tr>
-                <td>@key.Key</td><td><a asp-page="Revoke" asp-route-_key="@key.Key">Revoke</a></td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-<form method="post" asp-page="Create">
-    <button type="submit">test</button>
-</form>

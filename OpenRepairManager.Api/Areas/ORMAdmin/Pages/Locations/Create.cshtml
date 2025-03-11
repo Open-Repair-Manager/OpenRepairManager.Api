@@ -1,8 +1,15 @@
 ﻿@page
+@using OpenRepairManager.Api.Services
 @model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Locations.CreateModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "New Location";
+    var gkey = SettingsService.GetSetting("GMapsKey");
+    string key = "";
+    if (gkey != null)
+    {
+        key = gkey.Value;
+    }
 }
 
 <div class="row">
@@ -13,43 +20,46 @@
             </div>
             <div class="content">
                 <form method="post">
-                    <div class="form-group">
-                        <label class="control-label">Find Address</label>
-                        <input class="form-control" id="Gmaps" type="text" placeholder="Search for locations..." />
-                    </div>
+                    @if (key != "")
+                    {
+                        <div class="form-group">
+                            <label class="control-label">Find Address</label>
+                            <input class="form-control" id="Gmaps" type="text" placeholder="Search for locations..."/>
+                        </div>
+                    }
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Location.LocationName" class="control-label"></label>
-                        <input asp-for="Location.LocationName" class="form-control" />
+                        <input asp-for="Location.LocationName" class="form-control"/>
                         <span asp-validation-for="Location.LocationName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Location.LocationStreetNo" class="control-label"></label>
-                        <input asp-for="Location.LocationStreetNo" class="form-control street_number" />
+                        <input asp-for="Location.LocationStreetNo" class="form-control street_number"/>
                         <span asp-validation-for="Location.LocationStreetNo" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Location.LocationStreetName" class="control-label"></label>
-                        <input asp-for="Location.LocationStreetName" class="form-control route" />
+                        <input asp-for="Location.LocationStreetName" class="form-control route"/>
                         <span asp-validation-for="Location.LocationStreetName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Location.LocationSuburb" class="control-label"></label>
-                        <input asp-for="Location.LocationSuburb" class="form-control locality" />
+                        <input asp-for="Location.LocationSuburb" class="form-control locality"/>
                         <span asp-validation-for="Location.LocationSuburb" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Location.LocationPostCode" class="control-label"></label>
-                        <input asp-for="Location.LocationPostCode" class="form-control postal_code" />
+                        <input asp-for="Location.LocationPostCode" class="form-control postal_code"/>
                         <span asp-validation-for="Location.LocationPostCode" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Location.GMapsPlaceId" class="control-label"></label>
-                        <input asp-for="Location.GMapsPlaceId" class="form-control" />
+                        <input asp-for="Location.GMapsPlaceId" class="form-control"/>
                         <span asp-validation-for="Location.GMapsPlaceId" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-default" />
+                        <input type="submit" value="Create" class="btn btn-default"/>
                     </div>
                 </form>
             </div>
@@ -63,7 +73,7 @@
 
 @section Scripts {
     <script defer
-            src="https://maps.googleapis.com/maps/api/js?key=key&libraries=places&callback=initAutocomplete">
+            src="https://maps.googleapis.com/maps/api/js?key=@key&libraries=places&callback=initAutocomplete">
     </script>
     <script>
         let placeSearch;

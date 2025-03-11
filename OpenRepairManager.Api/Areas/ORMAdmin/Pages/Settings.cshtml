@@ -1,0 +1,56 @@
+@page
+@model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Settings
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Settings";
+}
+<p class="text-subtitle text-muted">Configure basic ORM settings here</p>
+@if (Model.status)
+{
+    <div class="alert alert-success alert-dismissible show fade">
+        Settings saved successfully!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<form method="post">
+    <input type="submit" value="Save Changes" class="btn btn-primary"/>
+    <section class="section">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Site Name</h4>
+                    </div>
+                    <div class="card-body"> 
+                        <p>Edit the name of your repair program</p>
+                        <span class="text-danger" asp-validation-for="SiteName"></span>
+                        <input asp-for="SiteName" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Google Maps Integration Key</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>If you have an API key for Google Maps, enter it here</p>
+                        <input asp-for="GMapsKey" class="form-control" placeholder="Enter API Key"/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</form>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#configNav').addClass('active');
+        });
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

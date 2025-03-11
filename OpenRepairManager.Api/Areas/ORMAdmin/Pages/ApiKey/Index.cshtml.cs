@@ -6,6 +6,8 @@ using OpenRepairManager.Api.Service;
 using OpenRepairManager.Api.Data;
 using OpenRepairManager.Common.Models;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.ApiKey
 {

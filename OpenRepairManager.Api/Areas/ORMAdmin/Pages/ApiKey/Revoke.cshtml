@@ -2,10 +2,19 @@
 @model OpenRepairManager.Api.Areas.ORMAdmin.Pages.ApiKey.RevokeModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
+    ViewData["Title"] = "Revoke API Key";
 }
-
-<strong>Are you sure you want to revoke @Model.key.Key?</strong>
-<form method="post">
-    <input asp-for="key.Key" hidden />
-    <input value="Yes" type="submit" />
-</form>
+<section class="section">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title"><strong>Are you sure you want to revoke @Model.key.Key?</strong></h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <input asp-for="key.Key" hidden />
+                <input class="btn btn-danger me-1 mb-1" value="Yes" type="submit" />
+                <a type="button" asp-area="ORMAdmin" asp-page="/APIKey/Index" class="btn btn-info me-1 mb-1">No</a>
+            </form>
+        </div>
+    </div>
+</section>

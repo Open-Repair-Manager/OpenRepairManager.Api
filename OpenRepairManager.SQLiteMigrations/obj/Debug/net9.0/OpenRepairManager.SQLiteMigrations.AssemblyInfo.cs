@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OpenRepairManager.SQLiteMigrations")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fbb14f952a66e76cef9ed3a7f9ae3621078cf2c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+696efeaf5b4f7695f4069e6de988e7da67c0a3e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("OpenRepairManager.SQLiteMigrations")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OpenRepairManager.SQLiteMigrations")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

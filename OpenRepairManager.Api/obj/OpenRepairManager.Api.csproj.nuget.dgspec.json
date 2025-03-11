@@ -21,7 +21,8 @@
         ],
         "sources": {
           "/usr/local/share/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cloudsmith.io/ormpackages/orm-packages/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -52,6 +53,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.2, )"
+            },
+            "OpenRepairManager.Common": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
@@ -91,7 +96,8 @@
         ],
         "sources": {
           "/usr/local/share/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cloudsmith.io/ormpackages/orm-packages/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -151,6 +157,10 @@
               "target": "Package",
               "version": "[9.0.2, )"
             },
+            "OpenRepairManager.Common": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[9.0.0-preview.3.efcore.9.0.0, )"
@@ -200,7 +210,8 @@
         ],
         "sources": {
           "/usr/local/share/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cloudsmith.io/ormpackages/orm-packages/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -239,6 +250,10 @@
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
               "version": "[9.0.2, )"
+            },
+            "OpenRepairManager.Common": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -282,7 +297,8 @@
         ],
         "sources": {
           "/usr/local/share/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cloudsmith.io/ormpackages/orm-packages/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -333,6 +349,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[9.0.2, )"
+            },
+            "OpenRepairManager.Common": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [

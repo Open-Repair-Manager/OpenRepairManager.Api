@@ -9,12 +9,7 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.2" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Reference Include="OpenRepairManager.Common">
-        <HintPath>..\..\OpenRepairManager.Common\OpenRepairManager.Common\bin\Release\net9.0\publish\OpenRepairManager.Common.dll</HintPath>
-      </Reference>
+      <PackageReference Include="OpenRepairManager.Common" Version="1.0.0" />
     </ItemGroup>
 
 </Project>

@@ -21,7 +21,8 @@
         ],
         "sources": {
           "/usr/local/share/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cloudsmith.io/ormpackages/orm-packages/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -52,6 +53,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.2, )"
+            },
+            "OpenRepairManager.Common": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [

@@ -17,14 +17,9 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="OpenRepairManager.Common" Version="1.0.0" />
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0-preview.3.efcore.9.0.0" />
         <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.6.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Reference Include="OpenRepairManager.Common">
-        <HintPath>..\..\OpenRepairManager.Common\OpenRepairManager.Common\bin\Release\net9.0\publish\OpenRepairManager.Common.dll</HintPath>
-      </Reference>
     </ItemGroup>
 
     <ItemGroup>

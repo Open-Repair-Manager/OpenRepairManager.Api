@@ -2,9 +2,7 @@
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/bin/Debug/net9.0/OpenRepairManager.MySQLMigrations.dll
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/bin/Debug/net9.0/OpenRepairManager.MySQLMigrations.pdb
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/bin/Debug/net9.0/OpenRepairManager.Api.Data.dll
-/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/bin/Debug/net9.0/OpenRepairManager.Common.dll
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/bin/Debug/net9.0/OpenRepairManager.Api.Data.pdb
-/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/bin/Debug/net9.0/OpenRepairManager.Common.pdb
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/obj/Debug/net9.0/OpenRepairManager.MySQLMigrations.csproj.AssemblyReference.cache
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/obj/Debug/net9.0/OpenRepairManager.MySQLMigrations.GeneratedMSBuildEditorConfig.editorconfig
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.MySQLMigrations/obj/Debug/net9.0/OpenRepairManager.MySQLMigrations.AssemblyInfoInputs.cache

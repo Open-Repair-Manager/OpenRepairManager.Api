@@ -3,9 +3,7 @@
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/bin/Debug/net9.0/OpenRepairManager.SQLiteMigrations.dll
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/bin/Debug/net9.0/OpenRepairManager.SQLiteMigrations.pdb
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/bin/Debug/net9.0/OpenRepairManager.Api.Data.dll
-/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/bin/Debug/net9.0/OpenRepairManager.Common.dll
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/bin/Debug/net9.0/OpenRepairManager.Api.Data.pdb
-/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/bin/Debug/net9.0/OpenRepairManager.Common.pdb
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/obj/Debug/net9.0/OpenRepairManager.SQLiteMigrations.csproj.AssemblyReference.cache
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/obj/Debug/net9.0/OpenRepairManager.SQLiteMigrations.GeneratedMSBuildEditorConfig.editorconfig
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/obj/Debug/net9.0/OpenRepairManager.SQLiteMigrations.AssemblyInfoInputs.cache

@@ -21,7 +21,12 @@ namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.Sessions
 
         public IActionResult OnGet()
         {
-        ViewData["LocationID"] = new SelectList(_context.Set<Location>(), "LocationID", "LocationName");
+            var locationCount = _context.Location.Count();
+            if (locationCount == 0)
+            {
+                ViewData["Error"] = "No Locations found. Please add a location before creating a session.";
+            }
+            ViewData["LocationID"] = new SelectList(_context.Set<Location>(), "LocationID", "LocationName");
             return Page();
         }
 

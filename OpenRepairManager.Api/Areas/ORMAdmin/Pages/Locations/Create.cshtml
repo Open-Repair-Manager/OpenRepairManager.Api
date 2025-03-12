@@ -12,64 +12,62 @@
     }
 }
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="header">
-                <h4 class="title">Add Location</h4>
-            </div>
-            <div class="content">
-                <form method="post">
-                    @if (key != "")
-                    {
-                        <div class="form-group">
-                            <label class="control-label">Find Address</label>
-                            <input class="form-control" id="Gmaps" type="text" placeholder="Search for locations..."/>
-                        </div>
-                    }
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="Location.LocationName" class="control-label"></label>
-                        <input asp-for="Location.LocationName" class="form-control"/>
-                        <span asp-validation-for="Location.LocationName" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Location.LocationStreetNo" class="control-label"></label>
-                        <input asp-for="Location.LocationStreetNo" class="form-control street_number"/>
-                        <span asp-validation-for="Location.LocationStreetNo" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Location.LocationStreetName" class="control-label"></label>
-                        <input asp-for="Location.LocationStreetName" class="form-control route"/>
-                        <span asp-validation-for="Location.LocationStreetName" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Location.LocationSuburb" class="control-label"></label>
-                        <input asp-for="Location.LocationSuburb" class="form-control locality"/>
-                        <span asp-validation-for="Location.LocationSuburb" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Location.LocationPostCode" class="control-label"></label>
-                        <input asp-for="Location.LocationPostCode" class="form-control postal_code"/>
-                        <span asp-validation-for="Location.LocationPostCode" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Location.GMapsPlaceId" class="control-label"></label>
-                        <input asp-for="Location.GMapsPlaceId" class="form-control"/>
-                        <span asp-validation-for="Location.GMapsPlaceId" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-default"/>
-                    </div>
-                </form>
-            </div>
-
-            <div>
-                <a asp-area="ORMAdmin" asp-page="/Locations/Index">Back to List</a>
-            </div>
+<section class="section">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Search for a location or enter manually</h4>
         </div>
+        <div class="card-body">
+            <form method="post">
+                @if (key != "")
+                {
+                    <div class="form-group">
+                        <label class="control-label">Find Address</label>
+                        <input class="form-control" id="Gmaps" type="text" placeholder="Search for locations..."/>
+                    </div>
+                }
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Location.LocationName" class="control-label"></label>
+                    <input asp-for="Location.LocationName" class="form-control"/>
+                    <span asp-validation-for="Location.LocationName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Location.LocationStreetNo" class="control-label"></label>
+                    <input asp-for="Location.LocationStreetNo" class="form-control street_number"/>
+                    <span asp-validation-for="Location.LocationStreetNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Location.LocationStreetName" class="control-label"></label>
+                    <input asp-for="Location.LocationStreetName" class="form-control route"/>
+                    <span asp-validation-for="Location.LocationStreetName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Location.LocationSuburb" class="control-label"></label>
+                    <input asp-for="Location.LocationSuburb" class="form-control locality"/>
+                    <span asp-validation-for="Location.LocationSuburb" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Location.LocationPostCode" class="control-label"></label>
+                    <input asp-for="Location.LocationPostCode" class="form-control postal_code"/>
+                    <span asp-validation-for="Location.LocationPostCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    
+                    <label asp-for="Location.GMapsPlaceId" class="control-label"></label>
+                    <input asp-for="Location.GMapsPlaceId" class="form-control"/>
+                    <strong><a href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder" target="_blank">Click here to manually locate Place ID</a></strong>
+                    <span asp-validation-for="Location.GMapsPlaceId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary"/> <a class="btn btn-warning" asp-area="ORMAdmin" asp-page="/Locations/Index">Cancel</a>
+                </div>
+            </form>
+        </div>
+
     </div>
-</div>
+</section>
+
 
 @section Scripts {
     <script defer

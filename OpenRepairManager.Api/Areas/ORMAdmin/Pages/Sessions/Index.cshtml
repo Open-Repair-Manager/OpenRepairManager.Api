@@ -5,15 +5,16 @@
     ViewData["Title"] = "View Sessions";
 }
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="header">
-                <h4 class="title">Sessions</h4>
-                <p class="category"><a asp-area="ORMAdmin" asp-page="/Sessions/Create">New Session</a> </p>
-            </div>
-            <div class="content table-responsive table-full-width">
-                <table class="table table-hover table-striped">
+<section class="section">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Mange Sessions</h4>
+        </div>
+        <div class="card-body">
+            <p>You currently have <strong>@Model.Session.Count</strong> Session(s)</p>
+            <p><a class="btn btn-primary" asp-area="ORMAdmin" asp-page="Create">New Session</a></p>
+            <div class="table-responsive">
+                <table class="table table-striped mb-0" id="locTable">
                     <thead>
                         <tr>
                             <th>
@@ -76,11 +77,13 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 @section Scripts{
     <script>
         $(document).ready(function () {
-            $('#sessionMan').addClass('active');
+            $('#sesNavBase').addClass('active');
+            $('#sesViewNav').addClass('active');
+            $('#sesNavSub').addClass('active submenu-open');
         });
     </script>
 }

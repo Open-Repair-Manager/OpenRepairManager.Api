@@ -1,15 +1,12 @@
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/bin/Debug/net9.0/OpenRepairManager.Api.Data.deps.json
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/bin/Debug/net9.0/OpenRepairManager.Api.Data.dll
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/bin/Debug/net9.0/OpenRepairManager.Api.Data.pdb
-/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/bin/Debug/net9.0/OpenRepairManager.Common.dll
-/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/bin/Debug/net9.0/OpenRepairManager.Common.pdb
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/obj/Debug/net9.0/OpenRepairManager.Api.Data.csproj.AssemblyReference.cache
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/obj/Debug/net9.0/OpenRepairManager.Api.Data.GeneratedMSBuildEditorConfig.editorconfig
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/obj/Debug/net9.0/OpenRepairManager.Api.Data.AssemblyInfoInputs.cache
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/obj/Debug/net9.0/OpenRepairManager.Api.Data.AssemblyInfo.cs
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/obj/Debug/net9.0/OpenRepairManager.Api.Data.csproj.CoreCompileInputs.cache
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/obj/Debug/net9.0/OpenRepairManager.Api.Data.sourcelink.json
-/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/obj/Debug/net9.0/OpenRepa.D157B65F.Up2Date
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/obj/Debug/net9.0/OpenRepairManager.Api.Data.dll
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/obj/Debug/net9.0/refint/OpenRepairManager.Api.Data.dll
 /Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api.Data/obj/Debug/net9.0/OpenRepairManager.Api.Data.pdb

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using OpenRepairManager.Api.Services;
 
 namespace OpenRepairManager.Api.Pages;
 
@@ -12,7 +13,15 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
-    public void OnGet()
+    public async Task<IActionResult> OnGetAsync()
     {
+        var isFirstRun = SettingsService.GetSetting("FirstRun");
+
+        if (isFirstRun.Value == "yes")
+        {
+            return Redirect("/ORMAdmin/Setup");
+        }
+        
+        return Redirect("/ORMAdmin/Index");
     }
 }

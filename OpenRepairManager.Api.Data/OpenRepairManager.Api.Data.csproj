@@ -9,7 +9,7 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.3" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
-      <PackageReference Include="OpenRepairManager.Common" Version="1.0.0" />
+      <PackageReference Include="OpenRepairManager.Common" Version="1.0.1" />
     </ItemGroup>
 
 </Project>

@@ -989,7 +989,7 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
-      "OpenRepairManager.Common/1.0.0": {
+      "OpenRepairManager.Common/1.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Components.Web": "9.0.0"
@@ -1376,7 +1376,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.3",
           "Microsoft.EntityFrameworkCore": "9.0.3",
-          "OpenRepairManager.Common": "1.0.0"
+          "OpenRepairManager.Common": "1.0.1"
         },
         "compile": {
           "bin/placeholder/OpenRepairManager.Api.Data.dll": {}
@@ -3294,14 +3294,14 @@
         "readme.md"
       ]
     },
-    "OpenRepairManager.Common/1.0.0": {
-      "sha512": "i4lTvBPJeo8bo1JS782z/URgL8DhY884gl8x6siibGyzAz5PaXb8sOZLPj+OamPsixFBYGLex5XHzDpTPyyX+Q==",
+    "OpenRepairManager.Common/1.0.1": {
+      "sha512": "8KgWvCf4tvpS9QBVcGDPQsAqLW2sfIg9GIig9agIBrU6RO3u0Q3Ft79/7qJ2GLKIu7Ezf3ZwGPhV4LsIpoc7og==",
       "type": "package",
-      "path": "openrepairmanager.common/1.0.0",
+      "path": "openrepairmanager.common/1.0.1",
       "files": [
         ".nupkg.metadata",
         "lib/net9.0/OpenRepairManager.Common.dll",
-        "openrepairmanager.common.1.0.0.nupkg.sha512",
+        "openrepairmanager.common.1.0.1.nupkg.sha512",
         "openrepairmanager.common.nuspec"
       ]
     },
@@ -3821,7 +3821,7 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.3",
       "OpenRepairManager.Api.Data >= 1.0.0",
-      "OpenRepairManager.Common >= 1.0.0"
+      "OpenRepairManager.Common >= 1.0.1"
     ]
   },
   "packageFolders": {
@@ -3901,7 +3901,7 @@
           },
           "OpenRepairManager.Common": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.1, )"
           }
         },
         "imports": [

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BZG91L7FBnA=",
+  "dgSpecHash": "C03vga/UL80=",
   "success": true,
   "projectFilePath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.SQLiteMigrations/OpenRepairManager.SQLiteMigrations.csproj",
   "expectedPackageFiles": [
@@ -50,7 +50,7 @@
     "/Users/mitchellhawks/.nuget/packages/microsoft.extensions.primitives/9.0.3/microsoft.extensions.primitives.9.0.3.nupkg.sha512",
     "/Users/mitchellhawks/.nuget/packages/microsoft.jsinterop/9.0.0/microsoft.jsinterop.9.0.0.nupkg.sha512",
     "/Users/mitchellhawks/.nuget/packages/mono.texttemplating/3.0.0/mono.texttemplating.3.0.0.nupkg.sha512",
-    "/Users/mitchellhawks/.nuget/packages/openrepairmanager.common/1.0.0/openrepairmanager.common.1.0.0.nupkg.sha512",
+    "/Users/mitchellhawks/.nuget/packages/openrepairmanager.common/1.0.1/openrepairmanager.common.1.0.1.nupkg.sha512",
     "/Users/mitchellhawks/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.10/sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512",
     "/Users/mitchellhawks/.nuget/packages/sqlitepclraw.core/2.1.10/sqlitepclraw.core.2.1.10.nupkg.sha512",
     "/Users/mitchellhawks/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.10/sqlitepclraw.lib.e_sqlite3.2.1.10.nupkg.sha512",

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OpenRepairManager.Api.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e37452fffebe2dd55521eb5d168788265d890294")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fbf65d18914dda9ac6b3e9fb6a110f7a99a52aa3")]
 [assembly: System.Reflection.AssemblyProductAttribute("OpenRepairManager.Api.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OpenRepairManager.Api.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

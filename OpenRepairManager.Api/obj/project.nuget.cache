@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VD6SCS0yiH0=",
+  "dgSpecHash": "TpqJI06yif0=",
   "success": true,
   "projectFilePath": "/Users/mitchellhawks/RiderProjects/OpenRepairManager.Api/OpenRepairManager.Api/OpenRepairManager.Api.csproj",
   "expectedPackageFiles": [
@@ -142,7 +142,7 @@
     "/Users/mitchellhawks/.nuget/packages/nuget.projectmodel/6.11.0/nuget.projectmodel.6.11.0.nupkg.sha512",
     "/Users/mitchellhawks/.nuget/packages/nuget.protocol/6.11.0/nuget.protocol.6.11.0.nupkg.sha512",
     "/Users/mitchellhawks/.nuget/packages/nuget.versioning/6.11.0/nuget.versioning.6.11.0.nupkg.sha512",
-    "/Users/mitchellhawks/.nuget/packages/openrepairmanager.common/1.0.0/openrepairmanager.common.1.0.0.nupkg.sha512",
+    "/Users/mitchellhawks/.nuget/packages/openrepairmanager.common/1.0.1/openrepairmanager.common.1.0.1.nupkg.sha512",
     "/Users/mitchellhawks/.nuget/packages/pomelo.entityframeworkcore.mysql/9.0.0-preview.3.efcore.9.0.0/pomelo.entityframeworkcore.mysql.9.0.0-preview.3.efcore.9.0.0.nupkg.sha512",
     "/Users/mitchellhawks/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.10/sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512",
     "/Users/mitchellhawks/.nuget/packages/sqlitepclraw.core/2.1.10/sqlitepclraw.core.2.1.10.nupkg.sha512",

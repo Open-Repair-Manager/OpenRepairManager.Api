@@ -56,7 +56,7 @@
             },
             "OpenRepairManager.Common": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[1.0.1, )"
             }
           },
           "imports": [
@@ -167,7 +167,7 @@
             },
             "OpenRepairManager.Common": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[1.0.1, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -261,7 +261,7 @@
             },
             "OpenRepairManager.Common": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[1.0.1, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -362,7 +362,7 @@
             },
             "OpenRepairManager.Common": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[1.0.1, )"
             }
           },
           "imports": [

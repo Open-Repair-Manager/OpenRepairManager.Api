@@ -24,6 +24,25 @@ namespace OpenRepairManager.Api.Api
             _context = context;
         }
 
+        [HttpGet("/api/Stats/{slug}")]
+        public async Task<ActionResult<IEnumerable<RepairItem>>> GetStats(string slug)
+        {
+            if (slug.ToLower() == "all")
+            {
+                return await _context.RepairItem
+                    .Include(s => s.Session)
+                    .ToListAsync();
+            }
+            else
+            {
+                return await _context.RepairItem
+                    .Include(s => s.Session)
+                    .Where(s => s.Session.SessionSlug.ToUpper() == slug.ToUpper())
+                    .ToListAsync();                
+            }
+
+        }
+        
         // GET: api/RepairItems
         [HttpGet("Session/{sessionSlug}")]
         public async Task<ActionResult<IEnumerable<RepairItem>>> GetRepairItem(string sessionSlug)

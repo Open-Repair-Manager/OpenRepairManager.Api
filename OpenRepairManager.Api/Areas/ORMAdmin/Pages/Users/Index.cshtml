@@ -1,0 +1,39 @@
+@page
+@model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Users.Index
+
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<section class="section">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Manage Users</h4>
+        </div>
+        <div class="card-body">
+            <p>You currently have <strong>@Model.Users.Count</strong> user(s)</p>
+            <p><a class="btn btn-primary" asp-area="ORMAdmin" asp-page="Create">New Location</a></p>
+            <div class="table-responsive">
+                <table class="table table-striped mb-0" id="locTable">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var user in Model.Users)
+                    {
+                        <tr>
+                            <td>@user.Name</td>
+                            <td>@user.Email</td>
+                            <td></td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

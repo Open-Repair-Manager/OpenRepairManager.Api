@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using OpenRepairManager.Api.Data.Models;
 
 namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup;
 
@@ -29,7 +30,7 @@ public class AccountSetup : PageModel
 
     public async Task<IActionResult> OnPostAsync()
     {
-        IdentityUser user = new IdentityUser()
+        ORMUser user = new ORMUser()
         {
             UserName = Username,
             Email = Username,

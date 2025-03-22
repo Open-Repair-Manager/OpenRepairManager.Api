@@ -14,10 +14,10 @@ public class AccountSetup : PageModel
     
     public string Password { get; set; }
     
-    private readonly UserManager<IdentityUser> _userManager;
-    private readonly SignInManager<IdentityUser> _signInManager;
+    private readonly UserManager<ORMUser> _userManager;
+    private readonly SignInManager<ORMUser> _signInManager;
     
-    public AccountSetup(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+    public AccountSetup(UserManager<ORMUser> userManager, SignInManager<ORMUser> signInManager)
     {
         _userManager = userManager;
         _signInManager = signInManager;

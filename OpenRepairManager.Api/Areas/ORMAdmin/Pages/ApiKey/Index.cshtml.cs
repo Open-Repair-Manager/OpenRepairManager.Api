@@ -8,6 +8,7 @@ using OpenRepairManager.Common.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using OpenRepairManager.Api.Data.Models;
 
 namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.ApiKey
 {
@@ -15,9 +16,9 @@ namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.ApiKey
     {
         private ApiKeyService apiKeyService = new ApiKeyService();
         private ApplicationDbContext _context;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly SignInManager<ORMUser> _signInManager;
 
-        public IndexModel(ApplicationDbContext context, SignInManager<IdentityUser> signInManager) 
+        public IndexModel(ApplicationDbContext context, SignInManager<ORMUser> signInManager) 
         {
             _context= context;
             _signInManager= signInManager;

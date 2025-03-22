@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.IdentityModel.Tokens;
 using OpenRepairManager.Api.Services;
 using OpenRepairManager.Api.Data;
+using OpenRepairManager.Api.Data.Models;
 using OpenRepairManager.Api.Service;
 
 namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.ApiKey
@@ -12,10 +13,10 @@ namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.ApiKey
     public class CreateModel : PageModel
     {
         private ApplicationDbContext _context;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly SignInManager<ORMUser> _signInManager;
         private IHttpContextAccessor _contextAccessor;
 
-        public CreateModel(ApplicationDbContext context, SignInManager<IdentityUser> signInManager, IHttpContextAccessor accessor)
+        public CreateModel(ApplicationDbContext context, SignInManager<ORMUser> signInManager, IHttpContextAccessor accessor)
         {
             _context = context;
             _signInManager = signInManager;

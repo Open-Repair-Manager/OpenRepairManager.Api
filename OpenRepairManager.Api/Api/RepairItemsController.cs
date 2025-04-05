@@ -44,33 +44,33 @@ namespace OpenRepairManager.Api.Api
         }
         
         // GET: api/RepairItems
-        [HttpGet("Session/{sessionSlug}")]
+        [HttpGet("/api/Session/{sessionSlug}")]
         public async Task<ActionResult<IEnumerable<RepairItem>>> GetRepairItem(string sessionSlug)
         {
             return await _context.RepairItem.Include(s => s.Session).Where(r => r.Session.SessionSlug.ToUpper() == sessionSlug.ToUpper()).ToListAsync();
         }
 
-        [HttpGet("Session/{sessionSlug}/Completed")]
+        [HttpGet("/api/Session/{sessionSlug}/Completed")]
         public async Task<ActionResult<IEnumerable<RepairItem>>> GetCompletedRepairItem(string sessionSlug)
         {
             return await _context.RepairItem.Include(s => s.Session).Where(r => r.Session.SessionSlug.ToUpper() == sessionSlug.ToUpper()).ToListAsync();
         }
 
         // GET: api/RepairItems
-        [HttpGet("Session/{sessionSlug}/{category}")]
+        [HttpGet("/api/Session/{sessionSlug}/{category}")]
         public async Task<ActionResult<IEnumerable<RepairItem>>> GetRepairItem(string sessionSlug, string category)
         {
             return await _context.RepairItem.Include(s => s.Session).Where(r => r.Session.SessionSlug.ToUpper() == sessionSlug.ToUpper()).Where(c => c.PartnerProductCategory.ToUpper() == category.ToUpper()).Where(w => !w.Completed).ToListAsync();
         }
 
-        [HttpGet("Session/{sessionSlug}/Totals")]
+        [HttpGet("/api/Session/{sessionSlug}/Totals")]
         public async Task<ActionResult<IEnumerable<RepairItem>>> GetTotals(string sessionSlug)
         {
             return await _context.RepairItem.Include(s => s.Session).Where(r => r.Session.SessionSlug.ToUpper() == sessionSlug.ToUpper()).Where(w => !w.Completed).ToListAsync();
         }
 
         // GET: api/RepairItems/5
-        [HttpGet("{id}")]
+        [HttpGet("/api/Item/{id}")]
         public async Task<ActionResult<RepairItem>> GetRepairItem(int id)
         {
             var repairItem = await _context.RepairItem.FindAsync(id);
@@ -117,8 +117,8 @@ namespace OpenRepairManager.Api.Api
 
         // POST: api/RepairItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<RepairItem>> PostRepairItem(RepairItem repairItem)
+        [HttpPost("/api/RepairItem/Add")]
+        public async Task<ActionResult<RepairItem>> PostRepairItem([FromBody] RepairItem repairItem)
         {
             repairItem.ItemGuid = Guid.NewGuid();
             _context.RepairItem.Add(repairItem);

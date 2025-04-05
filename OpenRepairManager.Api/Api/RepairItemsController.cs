@@ -85,7 +85,7 @@ namespace OpenRepairManager.Api.Api
 
         // PUT: api/RepairItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("/api/RepairItem/Edit/{id}")]
         public async Task<IActionResult> PutRepairItem(int id, RepairItem repairItem)
         {
             if (id != repairItem.ID)

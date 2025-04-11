@@ -60,7 +60,7 @@ namespace OpenRepairManager.Api.Api
         [HttpGet("/api/Session/{sessionSlug}/{category}")]
         public async Task<ActionResult<IEnumerable<RepairItem>>> GetRepairItem(string sessionSlug, string category)
         {
-            return await _context.RepairItem.Include(s => s.Session).Where(r => r.Session.SessionSlug.ToUpper() == sessionSlug.ToUpper()).Where(c => c.PartnerProductCategory.ToUpper() == category.ToUpper()).Where(w => !w.Completed).ToListAsync();
+            return await _context.RepairItem.Include(s => s.Session).Where(r => r.Session.SessionSlug.ToUpper() == sessionSlug.ToUpper()).Where(c => c.PartnerProductCategory.ToUpper() == category.ToUpper()).ToListAsync();
         }
 
         [HttpGet("/api/Session/{sessionSlug}/Totals")]
@@ -127,7 +127,7 @@ namespace OpenRepairManager.Api.Api
             return StatusCode(201, new Response { Status = "Success", Message = $"Item Added Successfully!" });
         }
 
-        [HttpPost("ReturningItem")]
+        [HttpPost("/api/ReturningItem")]
         public async Task<IActionResult> ReturningRepairItem([FromBody] ReturningItemModel model)
         {
             var olditem = await _context.RepairItem.Where(s => s.ItemGuid == model.Guid).FirstOrDefaultAsync();

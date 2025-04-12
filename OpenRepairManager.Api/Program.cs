@@ -1,3 +1,5 @@
+using System.Net;
+using System.Net.Sockets;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
@@ -135,5 +137,29 @@ app.MapControllers();
 app.MapStaticAssets();
 app.MapRazorPages()
     .WithStaticAssets();
+
+Console.WriteLine("Starting Open Repair Manager");
+
+Console.WriteLine(@"  ____                     _____                  _        __  __                                   
+ / __ \                   |  __ \                (_)      |  \/  |                                  
+| |  | |_ __   ___ _ __   | |__) |___ _ __   __ _ _ _ __  | \  / | __ _ _ __   __ _  __ _  ___ _ __ 
+| |  | | '_ \ / _ \ '_ \  |  _  // _ \ '_ \ / _` | | '__| | |\/| |/ _` | '_ \ / _` |/ _` |/ _ \ '__|
+| |__| | |_) |  __/ | | | | | \ \  __/ |_) | (_| | | |    | |  | | (_| | | | | (_| | (_| |  __/ |   
+ \____/| .__/ \___|_| |_| |_|  \_\___| .__/ \__,_|_|_|    |_|  |_|\__,_|_| |_|\__,_|\__, |\___|_|   
+       | |                           | |                                             __/ |          
+       |_|                           |_|                                            |___/           
+");
+
+Console.WriteLine("Server API address is");
+var host = Dns.GetHostEntry(Dns.GetHostName());
+foreach (var ip in host.AddressList)
+{
+    if (ip.AddressFamily == AddressFamily.InterNetwork)
+    {
+        Console.WriteLine(ip.ToString() + "/api/");
+        //app.Urls.Add("http://" + ip.ToString() + ":5000");
+    }
+}
+
 
 app.Run();

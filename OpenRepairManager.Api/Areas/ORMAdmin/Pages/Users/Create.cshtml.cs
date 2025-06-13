@@ -5,11 +5,11 @@ using OpenRepairManager.Api.Data.Models;
 
 namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.Users;
 
-public class Create : PageModel
+public class CreateModel : PageModel
 {
     private readonly UserManager<ORMUser> _userManager;
 
-    public Create(UserManager<ORMUser> userManager)
+    public CreateModel(UserManager<ORMUser> userManager)
     {
         _userManager = userManager;
     }

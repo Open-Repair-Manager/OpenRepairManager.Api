@@ -1,5 +1,5 @@
 @page
-@model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Users.Create
+@model OpenRepairManager.Api.Areas.ORMAdmin.Pages.Users.CreateModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Create User";
@@ -19,7 +19,7 @@
         else
         {
             <div class="card-header">
-                <h4 class="card-title">Create a new Session</h4>
+                <h4 class="card-title">Create a new User</h4>
             </div>
             <div class="card-body">
                 <form method="post">
@@ -42,3 +42,11 @@
         }
     </div>
 </section>
+<partial name="Shared/_ValidationScriptsPartial"/>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#usersNav').addClass('active');
+        });
+    </script>
+}

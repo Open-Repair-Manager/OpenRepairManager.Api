@@ -5,13 +5,13 @@ using OpenRepairManager.Api.Data.Models;
 
 namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.Users;
 
-public class Index : PageModel
+public class IndexModel : PageModel
 {
     private readonly UserManager<ORMUser> _userManager;
     
     public IList<ORMUser> Users { get; set; }
     
-    public Index(UserManager<ORMUser> userManager)
+    public IndexModel(UserManager<ORMUser> userManager)
     {
         _userManager = userManager;
     }

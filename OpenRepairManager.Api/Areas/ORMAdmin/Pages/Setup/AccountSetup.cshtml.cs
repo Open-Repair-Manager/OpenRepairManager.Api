@@ -14,13 +14,17 @@ public class AccountSetup : PageModel
     
     public string Password { get; set; }
     
+    public string Name { get; set; }
+    
     private readonly UserManager<ORMUser> _userManager;
     private readonly SignInManager<ORMUser> _signInManager;
+    private readonly RoleManager<IdentityRole> _roleManager;
     
-    public AccountSetup(UserManager<ORMUser> userManager, SignInManager<ORMUser> signInManager)
+    public AccountSetup(UserManager<ORMUser> userManager, SignInManager<ORMUser> signInManager, RoleManager<IdentityRole> roleManager)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _roleManager = roleManager;
     }
     
     public void OnGet()
@@ -34,11 +38,13 @@ public class AccountSetup : PageModel
         {
             UserName = Username,
             Email = Username,
+            Name = Name,
             EmailConfirmed = true
         };
         IdentityResult result = await _userManager.CreateAsync(user, Password);
         if (result.Succeeded)
         {
+            await _userManager.AddToRoleAsync(user, "Admin");
             await _signInManager.SignInAsync(user, true);
             return RedirectToPage("SetupComplete");
         }

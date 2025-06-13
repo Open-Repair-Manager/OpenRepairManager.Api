@@ -11,6 +11,7 @@ using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
 using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using Microsoft.AspNetCore.Identity;
 using IApplicationLifetime = Microsoft.AspNetCore.Hosting.IApplicationLifetime;
 
 namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup
@@ -31,8 +32,9 @@ namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup
 
         private readonly ApplicationDbContext _context;
         private IApplicationLifetime _applicationLifetime { get; set; }
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public DatabaseSetupModel(ApplicationDbContext context, IApplicationLifetime applicationLifetime)
+        public DatabaseSetupModel(ApplicationDbContext context, IApplicationLifetime applicationLifetime, RoleManager<IdentityRole> roleManager)
         {
             if (SettingsService.GetSetting("dberror").Value == "true")
             {
@@ -41,6 +43,7 @@ namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup
             }
             _context = context;
             _applicationLifetime = applicationLifetime;
+            _roleManager = roleManager;
         }
 
         public IActionResult OnGet()
@@ -67,6 +70,7 @@ namespace OpenRepairManager.Api.Areas.ORMAdmin.Pages.Setup
                     {
                         return Page();
                     }
+                    _roleManager.CreateAsync(new IdentityRole("Admin")).GetAwaiter().GetResult();
                     return RedirectToPage("AccountSetup");
                 }
             }
